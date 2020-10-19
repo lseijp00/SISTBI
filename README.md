@@ -1,0 +1,2 @@
+# SISTBI
+Documentos relacionados con la asignatura SISTEMAS DE INFORMACIÓN DE GESTION Y BUSINESS INTELLIGENGE
