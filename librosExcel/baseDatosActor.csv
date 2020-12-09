@@ -24,7 +24,7 @@ idActor,nombreActor,tipoPersonaA,idDirector,nombreDirector,tipoPersonaD
 23,Martin Freeman,ACTOR,23,Peter Jackson,DIRECTOR
 24,Dakota Blue Richards,ACTOR,24,Chris Weitz,DIRECTOR
 25,Naomi Watts,ACTOR,25,Peter Jackson,DIRECTOR
-26,Leonardo Dicaprio,ACTOR,26,James Cameron,DIRECTOR
+26,Leonardo DiCaprio,ACTOR,26,James Cameron,DIRECTOR
 27,Chris Evans,ACTOR,27,Anthony Russo,DIRECTOR
 28,Liam Neeson,ACTOR,28,Peter Berg,DIRECTOR
 29,Chris Patt,ACTOR,29,Colin Trevorrow,DIRECTOR
@@ -48,7 +48,7 @@ idActor,nombreActor,tipoPersonaA,idDirector,nombreDirector,tipoPersonaD
 47,Hugh Jackman,ACTOR,47,Bryan Singer,DIRECTOR
 48,Chris Pine,ACTOR,48,J.J Abrams,DIRECTOR
 49,Nicholas Hoult,ACTOR,49,Bryan Singer,DIRECTOR
-50,Leonardo Dicaprio,ACTOR,50,Baz Luhrmann,DIRECTOR
+50,Leonardo DiCaprio,ACTOR,50,Baz Luhrmann,DIRECTOR
 51,Jake Gyllenhaal,ACTOR,51,Mike Newell,DIRECTOR
 52,Charlie Hunnam,ACTOR,52,Guillermo del Toro,DIRECTOR
 53,Shia LaBeouf,ACTOR,53,Michael Bay,DIRECTOR
@@ -65,3 +65,4 @@ idActor,nombreActor,tipoPersonaA,idDirector,nombreDirector,tipoPersonaD
 64,Georgie Henley,ACTOR,64,Andrew Adamson,DIRECTOR
 65,James McAvoy,ACTOR,65,Bryan Singer,DIRECTOR
 66,Christian Bale,ACTOR,66,Christopher Nolan,DIRECTOR
+67,Leonardo DiCaprio,ACTOR,67,Martin Scorsese,DIRECTOR
