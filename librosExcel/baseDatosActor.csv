@@ -102,5 +102,7 @@ idActor,nombreActor,tipoPersonaA,idDirector,nombreDirector,tipoPersonaD
 101,Tom Cruise,ACTOR,101,Doug Liman,DIRECTOR
 102,Brad Pitt,ACTOR,102,Quentin Tarantino,DIRECTOR
 103,Uma Thurman,ACTOR,103,Quentin Tarantino,DIRECTOR
+104,Arnold Schwarzenegger,ACTOR,103,James Cameron,DIRECTOR
+105,Leigh Whannell,ACTOR,103,James Wan,DIRECTOR
 
 
