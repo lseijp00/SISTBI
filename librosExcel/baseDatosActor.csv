@@ -86,4 +86,21 @@ idActor,nombreActor,tipoPersonaA,idDirector,nombreDirector,tipoPersonaD
 85,Al Pacino,ACTOR,85,Brian De Palma,DIRECTOR
 86,Denzel Washington,ACTOR,86,Ridley Scott,DIRECTOR
 87,Denzel Washington,ACTOR,87,Tony Scott,DIRECTOR
+88,Leonardo DiCaprio,ACTOR,88,Steven Spielberg,DIRECTOR
+89,Jeff Bridges,ACTOR,89,Joel Coen,DIRECTOR
+90,Jim Carrey,ACTOR,90,Chuck Russell,DIRECTOR
+91,Jim Carrey,ACTOR,91,Peter Weir,DIRECTOR
+92,Tom Hanks,ACTOR,92,Steven Spielberg,DIRECTOR
+93,Tom Hanks,ACTOR,93,Robert Zemeckis,DIRECTOR
+94,Graham Chapman,ACTOR,94,Terry Jones,DIRECTOR
+95,Jake Gyllenhaal,ACTOR,95,Denis Villeneuve,DIRECTOR
+96,Gerard Butler,ACTOR,96,F. Gary Gray,DIRECTOR
+97,Ben Affleck,ACTOR,97,Ben Affleck	,DIRECTOR
+98,Julia Roberts,ACTOR,98,P.J. Hogan,DIRECTOR
+99,Liam Neeson,ACTOR,99,Pierre Morel,DIRECTOR
+100,Tom Cruise,ACTOR,100,Brad Bird,DIRECTOR
+101,Tom Cruise,ACTOR,101,Doug Liman,DIRECTOR
+102,Brad Pitt,ACTOR,102,Quentin Tarantino,DIRECTOR
+103,Uma Thurman,ACTOR,103,Quentin Tarantino,DIRECTOR
+
 
