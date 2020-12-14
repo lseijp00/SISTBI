@@ -102,7 +102,18 @@ idActor,nombreActor,tipoPersonaA,idDirector,nombreDirector,tipoPersonaD
 101,Tom Cruise,ACTOR,101,Doug Liman,DIRECTOR
 102,Brad Pitt,ACTOR,102,Quentin Tarantino,DIRECTOR
 103,Uma Thurman,ACTOR,103,Quentin Tarantino,DIRECTOR
-104,Arnold Schwarzenegger,ACTOR,103,James Cameron,DIRECTOR
-105,Leigh Whannell,ACTOR,103,James Wan,DIRECTOR
+104,Arnold Schwarzenegger,ACTOR,104,James Cameron,DIRECTOR
+105,Leigh Whannell,ACTOR,105,James Wan,DIRECTOR
+106,Ivana Baquero,ACTOR,106,	Guillermo del Toro,DIRECTOR
+107,Emma Thompson,ACTOR,107,Kirk Jones,DIRECTOR
+108,Josh Hutcherson,ACTOR,108,Gábor Csupó,DIRECTOR
+109,Johnny Depp,ACTOR,109,Roald Dahl,DIRECTOR
+110,Logan Lerman,ACTOR,110,Chris Columbus,DIRECTOR
+111,Mara Wilson,ACTOR,111,Danny DeVito,DIRECTOR
+112,Tim Allen,ACTOR,112,John Pasquin,DIRECTOR
+113,Robin Williams,ACTOR,113,Joe Johnston,DIRECTOR
+114,Angelina Jolie,ACTOR,114,Robert Stromberg,DIRECTOR
+115,Jeremy Sumpter,ACTOR,115,P.J. Hogan,DIRECTOR
+116,Daniel Radcliffe,ACTOR,116,Alfonso Cuarón,DIRECTOR
 
 
