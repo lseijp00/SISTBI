@@ -44,27 +44,29 @@ Esto será lo que veas al realizar lo anterior explicado.
 
 ![captura](imágenesReadme/captura.PNG)
 
-Para conseguir los detalles de conexión de la base de datos creadas de la sandbox, nos fijamos en estos datos:
+Para conseguir los detalles de conexión de la base de datos creada en la sandbox, nos fijamos en estos datos:
 
 
 ![fotoBlank](imágenesReadme/fotoBlank.PNG)
 
 
+Estos datos los necesitaremos a continucación. Pasos a seguir:
+* Abrir el archivo app.js con un editor de texto
+* Dirigirnos a la línea 26
+* Cambiar el **bolt://...** por nuestra _Bolt URL_ **bolt://...** que aparezca en nuestra sandbox.
+* Lo mismo con el _Username_ y con la _Password_
 
+![fotoVSC](imágenesReadme/fotoVSC.PNG)
 
-
-
-### Y las pruebas de estilo de codificación ⌨️
-
-_Explica que verifican estas pruebas y por qué_
-
+Cuando ya tengamos esto, lo siguiente será comprobar el funcionamiento de la página web. Para ello nos dirigimos a la terminal cmd, situados en el directorio de la carpeta Take My Movie donde hemos realizado el **npm install** y escribimos el siguiente comando:
 ```
-Da un ejemplo
+node app.js
 ```
+Si todo funciona bien, nos debería aparecer lo siguiente.
 
-## Despliegue 📦
+![fotoServer](imágenesReadme/fotoServer.PNG)
 
-_Agrega notas adicionales sobre como hacer deploy_
+Después de esto ya podremos poner en nuestro buscador del navegador **localhost:3000** y visionar la página web con la base de datos enlazada.
 
 ## Construido con 🛠️
 
@@ -74,18 +76,6 @@ _Menciona las herramientas que utilizaste para crear tu proyecto_
 * [Maven](https://maven.apache.org/) - Manejador de dependencias
 * [ROME](https://rometools.github.io/rome/) - Usado para generar RSS
 
-## Contribuyendo 🖇️
-
-Por favor lee el [CONTRIBUTING.md](https://gist.github.com/villanuevand/xxxxxx) para detalles de nuestro código de conducta, y el proceso para enviarnos pull requests.
-
-## Wiki 📖
-
-Puedes encontrar mucho más de cómo utilizar este proyecto en nuestra [Wiki](https://github.com/tu/proyecto/wiki)
-
-## Versionado 📌
-
-Usamos [SemVer](http://semver.org/) para el versionado. Para todas las versiones disponibles, mira los [tags en este repositorio](https://github.com/tu/proyecto/tags).
-
 ## Autores ✒️
 
 _Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios_
@@ -94,17 +84,6 @@ _Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios
 * **Fulanito Detal** - *Documentación* - [fulanitodetal](#fulanito-de-tal)
 
 También puedes mirar la lista de todos los [contribuyentes](https://github.com/your/project/contributors) quíenes han participado en este proyecto. 
-
-## Licencia 📄
-
-Este proyecto está bajo la Licencia (Tu Licencia) - mira el archivo [LICENSE.md](LICENSE.md) para detalles
-
-## Expresiones de Gratitud 🎁
-
-* Comenta a otros sobre este proyecto 📢
-* Invita una cerveza 🍺 o un café ☕ a alguien del equipo. 
-* Da las gracias públicamente 🤓.
-* etc.
 
 
 
