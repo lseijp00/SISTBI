@@ -40,7 +40,14 @@ Al crear la sandbox, insertaremos paso por paso todos los comandos que se encuen
 ## Ejecutando las pruebas ⚙️
 
 Esto será lo que veas al realizar lo anterior explicado.
+
+
 ![captura](imágenesReadme/captura.PNG)
+
+Para conseguir los detalles de conexión de la base de datos creadas de la sandbox, nos fijamos en estos datos:
+
+
+![fotoBlank](imágenesReadme/fotoBlank.PNG)
 
 
 
