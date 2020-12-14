@@ -34,17 +34,18 @@ npm install
 Si todo ha ido bien, se nos creará una carpeta dentro del propio folder "Take My Movie" que se llame "node_modules".
 Esto nos permitirá utilizar el Nodejs para hacer funcionar la página web.
 
+Lo siguiente que habría que hacer es dirigirse a https://sandbox.neo4j.com/ y crear un nuevo proyecto donde vamos a insertar todos los datos de mis .csv
+Al crear la sandbox, insertaremos paso por paso todos los comandos que se encuentran en el archivo *Pasos a seguir Neo4j Sandbox* en mi Github
+
 ## Ejecutando las pruebas ⚙️
 
-__
+Esto será lo que veas al realizar lo anterior explicado.
+![captura](imágenesReadme/captura.PNG)
 
-### Analice las pruebas end-to-end 🔩
 
-_Explica que verifican estas pruebas y por qué_
 
-```
-Da un ejemplo
-```
+
+
 
 ### Y las pruebas de estilo de codificación ⌨️
 
