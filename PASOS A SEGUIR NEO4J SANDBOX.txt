@@ -1,0 +1,97 @@
+
+
+LOAD CSV WITH HEADERS
+FROM 'https://raw.githubusercontent.com/lseijp00/SISTBI/main/librosExcel/baseDatosPeliculas.csv'
+AS line
+MERGE (m:Movie {id:toInteger(line.id)})
+    ON CREATE SET
+          m.title = line.title,
+          m.budget= line.budget,
+          m.avgVote = toFloat(line.vote_average),
+          m.released = toInteger(line.release_date),
+          m.genres = split(line.genres,":"),
+          m.runtime = toInteger(line.runtime),
+          m.overview = line.overview
+
+LOAD CSV WITH HEADERS
+FROM 'https://raw.githubusercontent.com/lseijp00/SISTBI/main/librosExcel/baseDatosActor.csv'
+AS line
+MERGE (m:Actor {id:toInteger(line.idActor)})
+    ON CREATE SET
+          m.nombre = line.nombreActor,
+          m.tipo = line.tipoPersonaA
+
+
+///////borrar nodos ACTOR con el mismo nombre:
+
+MATCH (n:Actor)
+WITH n.nombre AS name, collect(n) AS nodes
+WHERE size(nodes) > 1
+FOREACH (n in tail(nodes) | DETACH DELETE n)
+
+
+LOAD CSV WITH HEADERS
+FROM 'https://raw.githubusercontent.com/lseijp00/SISTBI/main/librosExcel/baseDatosActor.csv'
+AS line
+MERGE (m:Director {id:toInteger(line.idDirector)})
+    ON CREATE SET
+          m.nombre = line.nombreDirector,
+          m.tipo = line.tipoPersonaD
+
+///////borrar nodos DIRECTOR con el mismo nombre:
+
+MATCH (n:Director)
+WITH n.nombre AS name, collect(n) AS nodes
+WHERE size(nodes) > 1
+FOREACH (n in tail(nodes) | DETACH DELETE n)
+
+
+LOAD CSV WITH HEADERS
+FROM 'https://raw.githubusercontent.com/lseijp00/SISTBI/main/librosExcel/baseDatosGeneros.csv'
+AS line
+MERGE (m:Genero {id:toInteger(line.id)})
+    ON CREATE SET
+          m.genero=line.generoNombre
+
+
+
+
+//las peliculas a las que hay que añadir los generos bien, son als que tienen la palabra id esa de mierda entre corchetes, y hay que borrarlas
+
+match(n:Movie)
+remove n.genres
+
+//relaciones entre actor y pelicula
+
+LOAD CSV WITH HEADERS FROM
+'https://raw.githubusercontent.com/lseijp00/SISTBI/main/librosExcel/baseDatosPeliculas.csv' AS row
+MATCH (movie:Movie {id:toInteger(row.id)})
+MATCH (actor:Actor {nombre:row.actorNombre})
+MERGE (actor)-[:ACTED_IN]-(movie)
+
+
+//relaciones entre director y pelicula
+
+LOAD CSV WITH HEADERS FROM
+'https://raw.githubusercontent.com/lseijp00/SISTBI/main/librosExcel/baseDatosPeliculas.csv' AS row
+MATCH (movie:Movie {id:toInteger(row.id)})
+MATCH (person:Director {nombre: (row.directorNombre)})
+MERGE (person)-[:haDirigido]-(movie)
+
+//relaciones entre pelicula y genero
+
+LOAD CSV WITH HEADERS FROM
+'https://raw.githubusercontent.com/lseijp00/SISTBI/main/librosExcel/baseDatosPeliculas.csv' AS row
+MATCH (movie:Movie {id:toInteger(row.id)})
+MATCH (genero:Genero {genero:row.generoNombre})
+MERGE (movie)-[:tieneGenero]-(genero)
+
+
+
+//SUPER IMPORTANTE, BORRA DIRECTORES CON EL MISMO NOMBRE PERO ELIMINA EL QUE TIENE MAS ID, LO CUAL 
+ME AYUDA LA HOSTIA
+
+MATCH (n1:Director),(n2:Director)
+with n1.id as id1, n2.id as id2, n2 as n2, n1 as n1
+where n1.nombre=n2.nombre and id2>id1
+delete n2
