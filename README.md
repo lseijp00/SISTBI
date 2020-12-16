@@ -35,8 +35,23 @@ Arrancar una terminal **cmd**, posicionarse en el directorio donde se encuentre 
 ```
 npm install
 ```
+ 
 
 Si todo ha ido bien, se nos creará una carpeta dentro del propio folder "Take My Movie" que se llame "node_modules".
+
+Después ejecutar estos comandos en el mismo directorio /Take My Movie
+```
+npm install express
+```
+
+```
+npm install neo4j-driver
+```
+```
+npm install ejs
+```
+
+
 Esto nos permitirá utilizar el Nodejs para hacer funcionar la página web.
 
 Lo siguiente que habría que hacer es dirigirse a https://sandbox.neo4j.com/ y crear un nuevo proyecto donde vamos a insertar todos los datos de mis .csv
