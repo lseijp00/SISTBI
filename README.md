@@ -1,6 +1,6 @@
 # SIBI
 Documentos relacionados con la asignatura SISTEMAS DE INFORMACIÓN DE GESTION Y BUSINESS INTELLIGENGE
-
+(En el vídeo he olvidado mostrar qué hay que hacer para instalar el Nodejs y poder utilizar el comando npm install en la terminal cmd).
 # Take My Movie
 
 Take My Movie es un proyecto que consta de una página web online de películas, la cual cuenta con un sistema de recomendación de las mismas en base a búsquedas previas
@@ -25,6 +25,10 @@ Descargar en formato ZIP el archivo Take My Movie del Github (y extraerlo) donde
 ```
 /public, /views, /app.js, /package-lock.json, /package.json
 ```
+https://nodejs.org/es/ Dirigirse a esta página y descargar el Nodejs.
+
+Después habrá que seguir estas instrucciones:https://bertofern.wordpress.com/2019/01/08/solucion-node-js-npm-no-reconocido-como-comando-interno-o-externo/, son 10 pasos simples.
+Finalmente ya podrá proseguir y utilizar el comando "npm install"
 
 Arrancar una terminal **cmd**, posicionarse en el directorio donde se encuentre la carpeta anteriormente descargada y utilizar este comando
 
