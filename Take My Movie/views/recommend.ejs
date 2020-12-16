@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Practica para Sistemas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=0.8" />
+
+    <!--FONT ROBOTO-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <!--FONT QUICKSAND-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//fonts.googleapis.com/css?family=Quicksand"
+    />
+    <!--FONT AWESOME-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+      crossorigin="anonymous"
+    />
+    <!--FONT OSWALD-->
+    <!--FONT RALEWAY-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald&display=swap"
+      rel="stylesheet"
+    />
+    <!--CUSTOM CSS-->
+    <link rel="stylesheet" href="/stylesRedirect.css" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+
+
+    <header class="header">
+        <p class="header-body">
+          Correo electrónico: <a href="#">takemymovie@gmail.com></a> &nbsp; |
+          &nbsp;Teléfono: <a href="#">987 35 35 35</a> &nbsp; | &nbsp;
+          <a href="#">León, Avenida Gutiérrez nº4545</a>
+        </p>
+      </header>
+    <div class="container-fluid colorearContenedorArriba">
+        <div class="d-flex justify-content-between">
+          <div class="logo">
+            <form method= "get" action="/" class="form">
+                <a href="#" onclick="$(this).closest('form').submit()" class="nav-link-propio" href="#"></a>
+                <img src="/logo.png" class="imagenLogo"/>
+            </form>
+          </div>
+          <nav class="navegacionBarra navbar-expand navbar-nav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                  <form method= "post" action="/movies/list" class="form">
+                  <a href="#"  onclick="$(this).closest('form').submit()" class="nav-link normal" href="#">PELÍCULAS</a>
+                  </form>
+              </li>
+              <li class="nav-item">
+                  <form method= "post" action="/actors/list" class="form">
+                  <a href="#"  onclick="$(this).closest('form').submit()" class="nav-link normal" href="#">ACTORES</a>
+                  </form>
+              </li>
+              <li class="nav-item">
+                  <form method= "post" action="/directors/list" class="form">
+                  <a href="#"  onclick="$(this).closest('form').submit()" class="nav-link normal" href="#">DIRECTORES</a>
+                  </form>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle normal"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  AÑADIR</a
+                >
+                <div class="dropdown-menu colocarMenuDrop" style="font-family:'Quicksand';" aria-labelledby="navbarDropdown">
+
+                    <form method= "post" action="/adding-movie" class="form">
+                        <a href="#"  onclick="$(this).closest('form').submit()" class="dropdown-item noNormal" href="#">Nueva película</a>
+                    </form>
+    
+                    <form method= "post" action="/adding-actor" class="form">
+                        <a href="#"  onclick="$(this).closest('form').submit()" class="dropdown-item noNormal" href="#">Nuevo actor</a>
+                    </form>
+    
+                    <form method= "post" action="/adding-director" class="form">
+                        <a href="#"  onclick="$(this).closest('form').submit()" class="dropdown-item noNormal" href="#">Nuevo director</a>
+                    </form>
+                  </div>
+              </li>
+            </ul>
+          </nav>
+          <div class="nav_menu_right d-flex align-items-end" style="font-family:'Quicksand';">
+            <form method= "post" action="/search-movies" class="form-inline" id="removeRecommender">
+              <input
+                class="form-control mr-sm-2"
+                type="search"
+                placeholder="Buscar película..."
+                aria-label="Search"
+                name="titleSearched"
+              />
+              <button class="btn"><i class="fas fa-search"></i></button>
+            </form>
+          </div>
+        </div>
+    </div>
+    
+    
+    <div class="container-fluid-propio">
+        <div class="row flex-wrap">
+            <div class="contenedorIzquierda col-sm-2" style="font-family: 'Quicksand';">
+                <div>
+                    <form method= "post" action="/show-movies">   
+                        <label class="my-1 mr-2" for="inlineFormCustomSelectPref"><p>Seleccionar género</p></label>
+                        <select name="genero" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" aria-labelledby="navbarDropdown">
+                            <option value="">Choose...</option>
+                            <option value="Animacion">Animacion</option>
+                            <option value="Accion">Accion</option>
+                            <option value="Fantasia">Fantasia</option>
+                            <option value="Comedia">Comedia</option>
+                            <option value="Aventura">Aventura</option>
+                            <option value="Ciencia Ficcion">Ciencia Ficcion</option>
+                            <option value="Drama">Drama</option>
+                            <option value="Superheroes">Superheroes</option>
+                            <option value="Thriller">Thriller</option>
+                        </select>
+
+                        <br><br>
+
+                        <label class="my-1 mr-2" for="inlineFormCustomSelectPref"><p>Seleccionar año</p></label>
+                        
+                        <select name="year"  class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref2">
+                            
+                            <option value="">Choose...</option>
+                            <option value="1980">1980-1984</option>
+                            <option value="1985">1985-1989</option>
+                            <option value="1990">1990-1994</option>  
+                            <option value="1995">1995-1999</option>
+                            <option value="2000">2000</option>
+                            <option value="2001">2001</option>
+                            <option value="2002">2002</option>
+                            <option value="2003">2003</option>
+                            <option value="2004">2004</option>
+                            <option value="2005">2005</option>
+                            <option value="2006">2006</option>
+                            <option value="2007">2007</option>
+                            <option value="2008">2008</option>
+                            <option value="2009">2009</option>
+                            <option value="2010">2010</option>
+                            <option value="2011">2011</option>
+                            <option value="2012">2012</option>
+                            <option value="2013">2013</option>
+                            <option value="2014">2014</option>
+                            <option value="2015">2015</option>
+                            <option value="2016">2016</option>
+                            <option value="2017">2017</option>
+                            <option value="2018">2018</option>
+                            <option value="2019">2019</option>
+                            <option value="2020">2020</option>
+                        </select>
+                        
+                        <br><br>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1" name="check">
+                            <label class="form-check-label" for="exampleCheck1">Ordenar por valoración</label>
+                        </div>
+                        <br>
+                        <button type="submit" class="btn btn-primary my-1" id="elemento">Submit</button>
+                    </form>
+                    <form method= "post" action="/recommend-movie" class="form">
+                        <br>
+                        <a href="#"  onclick="$(this).closest('form').submit()" class="editarRecomendar" href="#"><strong>¡Recomiéndame películas!</strong></a>
+                    </form>
+                </div> 
+
+            </div>
+            <div class="container-fluid-propio-derecha contenedorDerecha" id="cambiarAlturaContenedor">
+                
+                <div class="card-deck deck1" id="escribirPeliculasNulas"> 
+                    <div class="row form-group1">
+                    <!--  CARTA 1 -->
+                    <div class="flip-card mb-4" style="width: 10rem;">
+                        <div class="flip-card-inner" style="width: 10rem">
+                            <div class="flip-card-front">
+                                <img class="card-image"
+                                style="width: 10rem;"
+                                src=""
+                                alt="Avatar"
+                                style="width: 300px; height: 300px"
+                                />
+                                <div class="card-body-propio">
+                                    <h5 class="card-title" id="carta1">Card title</h5>
+                                    <h5 class="card-average">Card Average</h5>
+                                    <span>
+                                        <i class="fas fa-star" style="color:rgb(255, 81, 0);"></i>
+                                    </span>
+                                
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <label class="recomend">Recomendación</label>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- CARTA 2 -->
+                    <div class="flip-card mb-4" style="width: 10rem">
+                        <div class="flip-card-inner" style="width: 10rem">
+                            <div class="flip-card-front">
+                                <img class="card-image"
+                                    style="width: 10rem"
+                                    src=""
+                                    alt="Avatar"
+                                    style="width: 300px; height: 300px"
+                                />
+                                <div class="card-body-propio">
+                                    <h5 class="card-title" id="carta2">Card title</h5>
+                                    <h5 class="card-average">Card Average</h5>
+                                    <span>
+                                        <i class="fas fa-star" style="color:rgb(255, 81, 0);"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <label class="recomend">Recomendación</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CARTA 3 -->
+                    <div class="flip-card mb-4" style="width: 10rem">
+                        <div class="flip-card-inner" style="width: 10rem">
+                            <div class="flip-card-front">
+                                <img class="card-image"
+                                    style="width: 10rem"
+                                    src=""
+                                    alt="Avatar"
+                                    style="width: 300px; height: 300px"
+                                />
+                                <div class="card-body-propio">
+                                    <h5 class="card-title" id="carta3">Card title</h5>
+                                    <h5 class="card-average">Card Average</h5>
+                                    <span>
+                                        <i class="fas fa-star" style="color:rgb(255, 81, 0);"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <label class="recomend">Recomendación</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                </div>
+                
+                <!-- CARTA 4 -->
+                <div class="card-deck deck2">
+                    <div class="row form-group2">
+                         <!-- CARTA 4 -->
+                        <div class="flip-card mb-4" style="width: 10rem;">
+                            <div class="flip-card-inner" style="width: 10rem">
+                            <div class="flip-card-front">
+                                <img class="card-image"
+                                style="width: 10rem"
+                                src=""
+                                alt="Avatar"
+                                style="width: 300px; height: 300px"
+                                />
+                                <div class="card-body-propio">
+                                <h5 class="card-title" id="carta4">Card title</h5>
+                                <h5 class="card-average">Card Average</h5>
+                                <span>
+                                    <i class="fas fa-star" style="color:rgb(255, 81, 0);"></i>
+                                </span>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <label class="recomend">Recomendación</label>
+                            </div>
+                            </div>
+                        </div>
+                       
+                       <!-- CARTA 5 -->
+                        <div class="flip-card mb-4" style="width: 10rem">
+                            <div class="flip-card-inner" style="width: 10rem">
+                                <div class="flip-card-front">
+                                    <img class="card-image"
+                                    style="width: 10rem"
+                                    src=""
+                                    alt="Avatar"
+                                    style="width: 300px; height: 300px"
+                                />
+                                <div class="card-body-propio">
+                                    <h5 class="card-title" id="carta5">Card title</h5>
+                                    <h5 class="card-average">Card Average</h5>
+                                    <span>
+                                        <i class="fas fa-star" style="color:rgb(255, 81, 0);"></i>
+                                    </span>
+                                </div>
+                                </div>
+                                <div class="flip-card-back">
+                                    <label class="recomend">Recomendación</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- CARTA 6 -->
+                        <div class="flip-card mb-4" style="width: 10rem">
+                            <div class="flip-card-inner" style="width: 10rem">
+                                <div class="flip-card-front">
+                                    <img class="card-image"
+                                    style="width: 10rem"
+                                    src=""
+                                    alt="Avatar"
+                                    style="width: 300px; height: 300px"
+                                />
+                                <div class="card-body-propio">
+                                    <h5 class="card-title" id="carta6">Card title</h5>
+                                    <h5 class="card-average">Card Average</h5>
+                                    <span>
+                                        <i class="fas fa-star" style="color:rgb(255, 81, 0);"></i>
+                                    </span>
+                                </div>
+                                </div>
+                                <div class="flip-card-back">
+                                    <label class="recomend">Recomendación</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="card-deck deck3"> 
+                    <div class="row form-group3">
+                    <!--  CARTA 7 -->
+                    <div class="flip-card mb-4" style="width: 10rem;">
+                        <div class="flip-card-inner" style="width: 10rem">
+                            <div class="flip-card-front">
+                                <img class="card-image"
+                                style="width: 10rem"
+                                src=""
+                                alt="Avatar"
+                                style="width: 300px; height: 300px"
+                                />
+                                <div class="card-body-propio">
+                                    <h5 class="card-title" id="carta7">Card title</h5>
+                                    <h5 class="card-average">Card Average</h5>
+                                    <span>
+                                        <i class="fas fa-star" style="color:rgb(255, 81, 0);"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <label class="recomend">Recomendación</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+
+
+                    <!-- CARTA 8 -->
+                    <div class="flip-card mb-4" style="width: 10rem">
+                        <div class="flip-card-inner" style="width: 10rem">
+                            <div class="flip-card-front">
+                                <img class="card-image"
+                                    style="width: 10rem"
+                                    src=""
+                                    alt="Avatar"
+                                    style="width: 300px; height: 300px"
+                                />
+                                <div class="card-body-propio">
+                                    <h5 class="card-title" id="carta8">Card title</h5>
+                                    <h5 class="card-average">Card Average</h5>
+                                    <span>
+                                        <i class="fas fa-star" style="color:rgb(255, 81, 0);"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <label class="recomend">Recomendación</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- CARTA 9 -->
+                    <div class="flip-card mb-4" style="width: 10rem">
+                        <div class="flip-card-inner" style="width: 10rem">
+                            <div class="flip-card-front">
+                                <img class="card-image"
+                                    style="width: 10rem"
+                                    src=""
+                                    alt="Avatar"
+                                    style="width: 300px; height: 300px"
+                                />
+                                <div class="card-body-propio">
+                                    <h5 class="card-title" id="carta9">Card title</h5>
+                                    <h5 class="card-average">Card Average</h5>
+                                    <span>
+                                        <i class="fas fa-star" style="color:rgb(255, 81, 0);"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <label class="recomend">Recomendación</label>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                </div>
+                <div class="card-deck deck4"> 
+                    <div class="row form-group3">
+                    <!--  CARTA 10 -->
+                    <div class="flip-card mb-4" style="width: 10rem;">
+                        <div class="flip-card-inner" style="width: 10rem">
+                            <div class="flip-card-front">
+                                <img class="card-image"
+                                style="width: 10rem"
+                                src=""
+                                alt="Avatar"
+                                style="width: 300px; height: 300px"
+                                />
+                                <div class="card-body-propio">
+                                    <h5 class="card-title" id="carta7">Card title</h5>
+                                    <h5 class="card-average">Card Average</h5>
+                                    <span>
+                                        <i class="fas fa-star" style="color:rgb(255, 81, 0);"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <label class="recomend">Recomendación</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+
+
+                    <!-- CARTA 11 -->
+                    <div class="flip-card mb-4" style="width: 10rem">
+                        <div class="flip-card-inner" style="width: 10rem">
+                            <div class="flip-card-front">
+                                <img class="card-image"
+                                    style="width: 10rem"
+                                    src=""
+                                    alt="Avatar"
+                                    style="width: 300px; height: 300px"
+                                />
+                                <div class="card-body-propio">
+                                    <h5 class="card-title" id="carta8">Card title</h5>
+                                    <h5 class="card-average">Card Average</h5>
+                                    <span>
+                                        <i class="fas fa-star" style="color:rgb(255, 81, 0);"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <label class="recomend">Recomendación</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- CARTA 12 -->
+                    <div class="flip-card mb-4" style="width: 10rem">
+                        <div class="flip-card-inner" style="width: 10rem">
+                            <div class="flip-card-front">
+                                <img class="card-image"
+                                    style="width: 10rem"
+                                    src=""
+                                    alt="Avatar"
+                                    style="width: 300px; height: 300px"
+                                />
+                                <div class="card-body-propio">
+                                    <h5 class="card-title" id="carta9">Card title</h5>
+                                    <h5 class="card-average">Card Average</h5>
+                                    <span>
+                                        <i class="fas fa-star" style="color:rgb(255, 81, 0);"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <label class="recomend">Recomendación</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    </div>
+                </div>
+                <div class="card-deck deck5"> 
+                    <div class="row form-group3">
+                    <!--  CARTA 10 -->
+                    <div class="flip-card mb-4" style="width: 10rem;">
+                        <div class="flip-card-inner" style="width: 10rem">
+                            <div class="flip-card-front">
+                                <img class="card-image"
+                                style="width: 10rem"
+                                src=""
+                                alt="Avatar"
+                                style="width: 300px; height: 300px"
+                                />
+                                <div class="card-body-propio">
+                                    <h5 class="card-title" id="carta7">Card title</h5>
+                                    <h5 class="card-average">Card Average</h5>
+                                    <span>
+                                        <i class="fas fa-star" style="color:rgb(255, 81, 0);"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <label class="recomend">Recomendación</label>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- CARTA 11 -->
+                    <div class="flip-card mb-4" style="width: 10rem">
+                        <div class="flip-card-inner" style="width: 10rem">
+                            <div class="flip-card-front">
+                                <img class="card-image"
+                                    style="width: 10rem"
+                                    src=""
+                                    alt="Avatar"
+                                    style="width: 300px; height: 300px"
+                                />
+                                <div class="card-body-propio">
+                                    <h5 class="card-title" id="carta8">Card title</h5>
+                                    <h5 class="card-average">Card Average</h5>
+                                    <span>
+                                        <i class="fas fa-star" style="color:rgb(255, 81, 0);"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <label class="recomend">Recomendación</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- CARTA 12 -->
+                    <div class="flip-card mb-4" style="width: 10rem">
+                        <div class="flip-card-inner" style="width: 10rem">
+                            <div class="flip-card-front">
+                                <img class="card-image"
+                                    style="width: 10rem"
+                                    src=""
+                                    alt="Avatar"
+                                    style="width: 300px; height: 300px"
+                                />
+                                <div class="card-body-propio">
+                                    <h5 class="card-title" id="carta9">Card title</h5>
+                                    <h5 class="card-average">Card Average</h5>
+                                    <span>
+                                        <i class="fas fa-star" style="color:rgb(255, 81, 0);"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <label class="recomend">Recomendación</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    </div>
+                </div>
+                <div class="card-deck deck6"> 
+                    <div class="row form-group3">
+                    <!--  CARTA 10 -->
+                    <div class="flip-card mb-4" style="width: 10rem;">
+                        <div class="flip-card-inner" style="width: 10rem">
+                            <div class="flip-card-front">
+                                <img class="card-image"
+                                style="width: 10rem"
+                                src=""
+                                alt="Avatar"
+                                style="width: 300px; height: 300px"
+                                />
+                                <div class="card-body-propio">
+                                    <h5 class="card-title" id="carta7">Card title</h5>
+                                    <h5 class="card-average">Card Average</h5>
+                                    <span>
+                                        <i class="fas fa-star" style="color:rgb(255, 81, 0);"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <label class="recomend">Recomendación</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+
+
+                    <!-- CARTA 11 -->
+                    <div class="flip-card mb-4" style="width: 10rem">
+                        <div class="flip-card-inner" style="width: 10rem">
+                            <div class="flip-card-front">
+                                <img class="card-image"
+                                    style="width: 10rem"
+                                    src=""
+                                    alt="Avatar"
+                                    style="width: 300px; height: 300px"
+                                />
+                                <div class="card-body-propio">
+                                    <h5 class="card-title" id="carta8">Card title</h5>
+                                    <h5 class="card-average">Card Average</h5>
+                                    <span>
+                                        <i class="fas fa-star" style="color:rgb(255, 81, 0);"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <label class="recomend">Recomendación</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- CARTA 12 -->
+                    <div class="flip-card mb-4" style="width: 10rem">
+                        <div class="flip-card-inner" style="width: 10rem">
+                            <div class="flip-card-front">
+                                <img class="card-image"
+                                    style="width: 10rem"
+                                    src=""
+                                    alt="Avatar"
+                                    style="width: 300px; height: 300px"
+                                />
+                                <div class="card-body-propio">
+                                    <h5 class="card-title" id="carta9">Card title</h5>
+                                    <h5 class="card-average">Card Average</h5><span>
+                                        <i class="fas fa-star" style="color:rgb(255, 81, 0);"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <label class="recomend">Recomendación</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer id="colocarFooter">
+            <!-- Copyright -->
+            <div class="footer-copyright text-center">© 2020 Copyright:
+              <a href="#">takemymovie.com</a>
+            </div>
+            <!-- Copyright -->
+        
+        </footer>
+    </div>
+
+
+
+
+ <!-- SCRIPT PARA IMPRIMIR COSAS EN LAS CARTAS DE LAS PELICULAS -->
+
+    <script>
+    var myVar = <%- JSON.stringify(movies2) %>;
+    var cont0=0;
+    var printTitle="";
+    var printAverage="";
+    var printImage="";
+
+
+    for(let i=0;i<myVar.length;i++){
+        printTitle=myVar[i].title;
+        printAverage=myVar[i].avgVote;
+        printImage=myVar[i].image;
+        //printAverage=Object.values(printAverage)[0];
+        printTitle=printTitle.replace("\"","");
+        document.getElementsByClassName("card-title")[cont0].innerHTML=printTitle;
+        document.getElementsByClassName("card-average")[cont0].innerHTML=printAverage;
+        document.getElementsByClassName("card-image")[cont0].src=printImage;
+        document.getElementsByClassName("card-image")[cont0].style="width: 10rem; border-radius: 1rem;";
+        
+        cont0++;
+    }
+    </script>
+   
+    <!-- IMPRIMIR QUE NO HAY PELICULAS QUE SE PUEDAN MOSTRAR -->
+
+    <!--SCRIPT PARA ELIMINAR X PELICULAS DE LAS 12 MOSTRADAS AL BUSCAR Y DAR ALTURA AL CONTENEDOR DEPENDIENNDO DEL NUMERO DE PELIS-->    
+    <script>
+        var cartaQuitar=document.getElementsByClassName("flip-card mb-4");
+        
+        for(let i=myVar.length;i<cartaQuitar.length;i++){
+            cartaQuitar[i].style.display='none';
+        } 
+        
+        var edit2= document.getElementsByClassName("deck2")[0].style;
+        var edit3= document.getElementsByClassName("deck3")[0].style;
+        var edit4= document.getElementsByClassName("deck4")[0].style;
+        var edit5= document.getElementsByClassName("deck5")[0].style;
+        var edit6= document.getElementsByClassName("deck6")[0].style;
+
+        var edit= document.getElementById("cambiarAlturaContenedor").style;
+
+        if(myVar.length==1 || myVar.length==2 || myVar.length==3){
+            edit.height="420px";
+            edit2.display='none';
+            edit3.display='none';
+            edit4.display='none';
+            edit5.display='none';
+            edit6.display='none';
+
+        }else if(myVar.length==6 || myVar.length==5 || myVar.length==4){
+            edit.height="800px";
+            edit3.display='none';
+            edit4.display='none';
+            edit5.display='none';
+            edit6.display='none';
+        }else if(myVar.length==7 || myVar.length==8 || myVar.length==9){
+            edit.height="1200px";
+            edit4.display='none';
+            edit5.display='none';
+            edit6.display='none';
+        }else if(myVar.length==10 || myVar.length==11 || myVar.length==12){
+            edit.height="1600px";
+            edit5.display='none';
+            edit6.display='none';
+        }else if(myVar.length==13 || myVar.length==14 || myVar.length==15){
+            edit.height="2000px";
+            edit6.display='none';
+        }else if(myVar.length==16 || myVar.length==17 || myVar.length==18){
+            edit.height="2400px";
+        }else{
+            edit.height="400px";
+        }
+
+
+    </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,159 @@
+*{
+    padding: 0%;
+    box-sizing: border-box;
+    margin: 0;    
+}
+
+body{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+ul,li,nav{
+    list-style-type: none;
+
+}
+.peliculasRedirect{
+    vertical-align: top;
+}
+.colorearContenedorArriba{
+    background: rgb(221,101,101);
+    background: linear-gradient(183deg, rgba(221,101,101,1) 0%, rgba(232,179,147,1) 51%, rgba(221,101,101,1) 100%);
+    border-bottom: #2D2926 3px solid;
+}
+
+    .nav_menu_right{
+        padding-bottom: 10px;
+    }
+
+/*HEADER Y SUS DATOS*/
+.header{
+    display: flex;
+    height: 26px;
+    justify-content: center;
+    background-color: #2D2926;
+    
+}
+header p.header-body{
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+
+}
+header p.header-body a{
+    color: white;
+    text-decoration: none;
+    
+}
+header p.header-body a:hover{
+    color: #dd6565;
+}
+
+
+/*PARTE IZQUIERDA MENU LOGO*/
+
+.logo{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 3px solid #2D2926;
+    border-radius: 0px 40px 40px 10px;
+    -moz-border-radius: 0px 40px 40px 10px;
+    -webkit-border-radius: 0px 40px 40px 10px;
+
+}
+    .imagenLogo{
+        margin-right: 20px;
+        z-index: 300;
+    }
+
+.nav-link-propio{
+    background-color: transparent;
+    position: absolute;
+    padding: 6.5rem 9.5rem;
+    z-index: 200;
+    opacity: 1;
+}
+
+/*PARTE MEDIA DEL MENU*/
+.navegacionBarra ul li{
+    margin-right: 70px;
+    transition: ease 0.9s;
+}
+    .navegacionBarra ul li:hover{
+        background-color: whitesmoke;
+    }
+
+.navegacionBarra ul li a.normal{
+    font-family: 'Quicksand', sans-serif;
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    padding-top: 170px;
+    transition: ease 0.5s;
+}
+
+    .itemDrop{
+        color: #000000;
+        font-family: 'Quicksand';
+        
+    }
+    .itemDrop:hover{
+        color:gray;
+        text-decoration: none;
+    }
+
+    .btn {
+        background-color: #2D2926;
+        border: none; 
+        color: white; 
+        padding: 12px 16px;
+        font-size: 16px; 
+        cursor: pointer; 
+    }
+    
+.alinearButton{
+    display: flex;
+    justify-content: center;
+    margin-top: 0.5rem;
+}
+
+#contenedorPropioAbajo{
+    background-color: whitesmoke;
+    margin-left: 20rem;
+    margin-top: 5rem;
+    margin-right: 18rem;
+    text-align: center;
+    font-size: 18px;
+    font-family: 'Quicksand';
+    border: 2px solid grey;
+    border-radius: 3rem;
+}
+
+.footer{
+    padding: 8px 16px;
+    background: rgb(0,212,255);
+    background: linear-gradient(321deg, rgba(0,212,255,1) 18%, rgba(41,168,220,1) 38%, rgba(73,133,192,1) 58%);
+    color:#f2f2f2;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+}
+
+
+.footer-copyright{
+    margin-top: 3%;
+    padding: 20px;
+    background-color: #2D2926;
+    color: white;
+}
+    .footer-copyright a{
+        color: inherit;
+        text-decoration: none;
+    }
+    .footer-copyright a:hover{
+        color: #dd6565;
+        text-decoration: none;
+    }
