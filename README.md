@@ -1,6 +1,9 @@
 # SIBI
 Documentos relacionados con la asignatura SISTEMAS DE INFORMACIÓN DE GESTION Y BUSINESS INTELLIGENGE
 (En el vídeo he olvidado mostrar qué hay que hacer para instalar el Nodejs y poder utilizar el comando npm install en la terminal cmd).
+
+EL VÍDEO HA SIDO SUBIDO A GOOGLE DRIVE, AQUÍ EL LINK.
+https://drive.google.com/file/d/1Q4WoY0KX0poEqJE03kegm5EZUU6x7hkf/view?usp=sharing
 # Take My Movie
 
 Take My Movie es un proyecto que consta de una página web online de películas, la cual cuenta con un sistema de recomendación de las mismas en base a búsquedas previas
