@@ -89,7 +89,7 @@ MERGE (movie)-[:tieneGenero]-(genero)
 
 
 //SUPER IMPORTANTE, BORRA DIRECTORES CON EL MISMO NOMBRE PERO ELIMINA EL QUE TIENE MAS ID, LO CUAL 
-ME AYUDA LA HOSTIA
+ME AYUDA
 
 MATCH (n1:Director),(n2:Director)
 with n1.id as id1, n2.id as id2, n2 as n2, n1 as n1
